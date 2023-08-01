@@ -10,6 +10,33 @@ public class doublyImple {
         b.prev =a ; 
         c.prev = b ; 
     }
+     // for inserting at last
+     public static Node insertAtLast(Node head , int x){
+        Node temp = new Node(x) ; 
+
+        Node curr = head ; 
+
+        if(curr==null){
+            head = temp ; 
+            return head ; 
+        }
+        while(curr.next!=null){
+            curr = curr.next ; 
+        }
+        curr.next = temp ; 
+        temp.prev = curr ; 
+
+        return head ; 
+    }
+
+    // for printing the LL
+    public static void display(Node head) {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
 }
 
 class Node{
