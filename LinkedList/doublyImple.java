@@ -37,6 +37,37 @@ public class doublyImple {
             temp = temp.next;
         }
     }
+
+    
+    // revercing doubly LL
+
+    public static Node reverce(Node head) {
+
+        if (head == null || head.next == null) {
+            return head;
+        }
+        Node curr = head;
+        Node prev = null;
+        while (curr != null) {
+            prev = curr.prev;
+            curr.prev = curr.next;
+            curr.next = prev;
+            curr = curr.next;
+        }
+        return prev;
+    }
+    // Deleting last node
+       public static Node deleteLast(Node head){
+        Node curr = head ; 
+        if(head==null||head.next==null){
+            return null ; 
+        }
+        while(curr.next.next!=null){
+            curr = curr.next ; 
+        }
+        curr.next = null ; 
+        return head ; 
+    }
 }
 
 class Node{
