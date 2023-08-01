@@ -26,13 +26,18 @@ public class cyclicLL {
         System.out.println(checkLL(a));
     }
 
-    public static void displayLL(Node head){
-        
-        System.out.print("Printing with help of function:  ");
-        while(head!=null){
-          System.out.print(head.data + " ");
-          head = head.next ;  
+   // printing Doubly linkedlist
+    public static void displayLL(Node head) {
+        if (head == null) {
+            return;
         }
+        Node temp = head;
+        System.out.print("Printing with help of function: ");
+
+        do {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        } while (temp != head);
     }
 
 
