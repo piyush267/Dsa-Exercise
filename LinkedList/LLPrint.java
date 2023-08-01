@@ -22,6 +22,34 @@ public class LLPrint {
 
     }
 
+     // printing middle of LL
+    public static void middleLL(Node head){
+        Node curr = head ; 
+        if(head==null){
+            System.out.println("  ");
+            return ; 
+        }
+        if(head.next==null){
+            System.out.println("Middle element of LL is : " +head.data);
+            return ; 
+        }
+        int count = 0 ; 
+        while(curr!=null){
+            count++ ; 
+            curr = curr.next ; 
+        }
+        curr = head ; 
+        int ref = count/2 ; 
+        int i=0; 
+        while(i<ref){
+            curr = curr.next ; 
+            i++ ; 
+        }
+        System.out.println();
+        System.out.println("Middle element of LL is : " + curr.data);
+        return  ;
+    }
+    
     public static void printLL(Node head){
         Node curr = head ; 
         while(curr!=null){
