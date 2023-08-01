@@ -26,6 +26,24 @@ public class cyclicLL {
         System.out.println(checkLL(a));
     }
 
+    // inserting at begining of LL
+    public static Node insertAtStart(Node head, int x) {
+        Node temp = new Node(x);
+        if (head == null) {
+            temp.next = temp;
+        } else {
+            Node curr = head;
+            while (curr.next != head) {
+                curr = curr.next;
+            }
+            curr.next = temp;
+            temp.next = head;
+        }
+
+        return temp;
+
+    }
+    
    // printing Doubly linkedlist
     public static void displayLL(Node head) {
         if (head == null) {
