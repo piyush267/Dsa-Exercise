@@ -21,7 +21,29 @@ public class LLPrint {
         printLL(newll);
 
     }
+    
+    // printing Nth from last of the LL
+    public static void nthFromLast(Node head, int n) {
+        Node curr = head;
+        int count = 0;
+        while (curr != null) {
+            curr = curr.next;
+            count++;
+        }
+        curr = head;
+        if(count<n){
+            return ; 
+        }
+        
+        int i = 1;
+        int pr = count - n + 1;
+        while (i < pr) {
+            curr = curr.next;
+            i++;
+        }
+        System.out.println(curr.data);
 
+    }
      // printing middle of LL
     public static void middleLL(Node head){
         Node curr = head ; 
